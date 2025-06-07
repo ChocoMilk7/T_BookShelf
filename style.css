@@ -1,0 +1,263 @@
+/* --- การตั้งค่าพื้นฐานและ Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    /* --- เทคนิคการจัดกลางหน้าจอแนวตั้ง --- */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- เนื้อหาหลัก (Main Content) --- */
+main {
+    flex-grow: 1; /* ทำให้ main ขยายเต็มพื้นที่ที่เหลือ */
+    display: flex; /* ใช้ flex เพื่อจัด content ให้อยู่กลาง */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* --- Navbar ด้านบน --- */
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #A076F9;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: #ffc0cb; /* Change the color on hover (example: gold) */
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo img:hover {
+    transform: scale(1.2);
+  }
+
+.nav-list-top {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list-top a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-list-top a:hover {
+    color: #ffc0cb;
+    transform: scale(1.2);
+}
+
+/* --- ส่วนข้อความ --- */
+.text-section {
+    max-width: 500px;
+}
+
+.text-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight1 { color: #FFBBDA; }
+.highlight2 { color: #00bfff; }
+
+.text-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* --- Social Icons --- */
+.social-icons {
+    margin-bottom: 2rem;
+}
+
+/* ทำให้ selector มีความเฉพาะเจาะจงมากขึ้น */
+.social-icons a.social-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+    text-decoration: none;
+    display: inline-block; /* เพิ่ม display เพื่อให้ transform ทำงานได้แน่นอน */
+    /* transition ที่นี่สำคัญมากสำหรับความสมูท */
+    transition: transform 0.2s ease-in-out; 
+}
+
+/* กำหนดสีเริ่มต้นให้แต่ละไอคอน */
+.social-icons .line { color: #00B900; }
+.social-icons .facebook { color: #1877F2; }
+.social-icons .discord { color: #5865F2; }
+.social-icons .instagram { color: #E4405F; }
+.social-icons .tiktok { color: #000000; }
+.social-icons .youtube { color: #FF0000; }
+
+
+/* ใช้ selector ที่เฉพาะเจาะจงเหมือนกันสำหรับ hover */
+.social-icons a.social-icon:hover {
+    /* นี่คือ key ของการย่อลง */
+    transform: scale(0.85); 
+}
+
+/* --- ปุ่ม Register --- */
+.register-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #00c2c7;
+    border-radius: 30px;
+    color: #00c2c7;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #00c2c7;
+    color: white;
+}
+
+/* --- ส่วนรูปภาพ --- */
+.image-section .image-wrapper {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: #e0f7fa;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-section img:hover {
+    transform: scale(1.2);
+}
+
+/* --- Navbar ด้านล่าง (ซ่อนในจอปกติ) --- */
+.navbar-bottom {
+    display: none;
+}
+
+
+/* --- =================================== --- */
+/* ---        Responsive Design (Mobile)     --- */
+/* --- =================================== --- */
+@media (max-width: 768px) {
+
+    body {
+        /* เพิ่ม padding ด้านล่างให้เนื้อหาไม่โดน navbar-bottom บัง */
+        padding-bottom: 80px; 
+    }
+
+    /* --- จัดการ Navbar ด้านบน --- */
+    .navbar-top {
+        justify-content: center; /* ให้โลโก้อยู่กลาง */
+    }
+
+    .nav-list-top {
+        display: none; /* ซ่อนเมนูตัวหนังสือด้านบน */
+    }
+
+    /* --- จัดการเนื้อหาหลัก --- */
+    .container {
+        flex-direction: column; /* สลับเป็นแนวตั้ง */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .image-section {
+        order: -1; /* ย้ายรูปภาพไปอยู่บนสุด */
+    }
+
+    .image-section .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .text-section h1 {
+        font-size: 2.5rem;
+    }
+
+    /* --- แสดง Navbar ด้านล่าง --- */
+    .navbar-bottom {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #A076F9;
+        padding: 5px 0;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-list-bottom {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-list-bottom a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column; /* ไอคอนกับตัวหนังสือเรียงแนวตั้ง */
+        align-items: center;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-list-bottom a:hover {
+        color: #ffc0cb; /* Change the color on hover (example: gold) */
+        transform: scale(1.2);
+    }
+
+    .nav-list-bottom i {
+        font-size: 1.5rem; /* ขนาดไอคอน */
+        margin-bottom: 4px;
+    }
+}
