@@ -141,8 +141,12 @@ main {
     display: inline-block;
     padding: 12px 30px;
     border: 2px solid #00c2c7;
+    /* สีของเส้นขอบหลัก */
     border-radius: 30px;
     color: #00c2c7;
+    /* สีข้อความหลัก */
+    background-color: transparent;
+    /* กำหนดพื้นหลังให้โปร่งใสอย่างชัดเจน */
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -151,16 +155,23 @@ main {
 
 .register-btn:hover {
     background-color: #00c2c7;
+    /* สลับสีเมื่อโฮเวอร์ */
     color: white;
 }
 
-/* --- ปุ่ม Add Points --- */
+/* ---------------------------------------------------------------- */
+
+/* --- ปุ่ม Add Points (สีตรงข้าม) --- */
 .add-points-btn {
     display: inline-block;
     padding: 12px 30px;
-    border: 2px solid white;
+    border: 2px solid #00c2c7;
+    /* ใช้สีเส้นขอบหลักเดียวกันกับสีข้อความและพื้นหลัง */
     border-radius: 30px;
     color: white;
+    /* สีข้อความหลักเป็นสีขาว */
+    background-color: #00c2c7;
+    /* สีพื้นหลังหลักเป็นสีเขียวอมน้ำเงิน */
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -169,7 +180,12 @@ main {
 
 .add-points-btn:hover {
     background-color: white;
+    /* สลับสีเมื่อโฮเวอร์ */
     color: #00c2c7;
+    border: 2px solid #00c2c7;
+    /* เพื่อให้เส้นขอบยังคงเป็นสีเดิมเมื่อโฮเวอร์ หรือเปลี่ยนเป็นสีขาวเพื่อให้สลับกันทั้งหมด */
+    /* ถ้าต้องการให้สลับกันโดยสมบูรณ์:
+    border: 2px solid white; */
 }
 
 /* --- ส่วนรูปภาพ --- */
