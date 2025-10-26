@@ -154,6 +154,24 @@ main {
     color: white;
 }
 
+/* --- ปุ่ม Add Points --- */
+.add-points-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.add-points-btn:hover {
+    background-color: white;
+    color: #00c2c7;
+}
+
 /* --- ส่วนรูปภาพ --- */
 .image-section .image-wrapper {
     width: 350px;
